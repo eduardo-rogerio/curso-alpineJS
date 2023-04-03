@@ -1,8 +1,12 @@
 @extends('layouts.base')
 
-<div x-data="{count:0}">
-    <button x-on:click="count++">
-        Increment
+<div x-data="{ open: false}">
+    <button @click="open = !open" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        click me
     </button>
-    <span x-text="count"></span>
+    <div x-show="open" @click.outside="open = false">
+        Contents...
+    </div>
 </div>
+
+
