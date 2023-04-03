@@ -1,12 +1,22 @@
 @extends('layouts.base')
 
-<div x-data="{ open: false}">
-    <button @click="open = !open" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        click me
-    </button>
-    <div x-show="open" @click.outside="open = false">
-        Contents...
-    </div>
+<div
+    x-data="{
+        search: '',
+        items:['foo', 'bar', 'baz'],
+
+        get filteredItems(){
+            return this.items.filter(i => i.includes(this.search))
+        }
+    }"
+>
+    <input x-model="search" placeholder="Search..."/>
+
+    <ul>
+        <template x-for="item" in filteredItems :key="item">
+            <li x-text="item"></li>
+        </template>
+    </ul>
 </div>
 
 
