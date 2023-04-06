@@ -6,10 +6,24 @@
     <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body>
-<form x-data="{terms:false}">
-    <input type="checkbox" x-model="terms">
-    <button type="submit">Enviar</button>
-    <span x-text="terms"></span>
+<!--<form x-data="{terms:false}">-->
+<!--    <input type="checkbox" x-model="terms">-->
+<!--    <button type="submit">Enviar</button>-->
+<!--    <span x-text="terms"></span>-->
+<!--</form>-->
+<form x-data="{
+posts:[]
+submit(){
+    console.log(this.posts)
+},
+}"
+      x-on:submit.prevent="submit()"
+>
+    <input type="checkbox" x-model="posts" value="1">Post 1<br>
+    <input type="checkbox" x-model="posts" value="2">Post 2<br>
+    <input type="checkbox" x-model="posts" value="3">Post 3<br>
+    <span x-text="posts"></span>
+    <button type="submit">Deletar</button>
 </form>
 </body>
 </html>
