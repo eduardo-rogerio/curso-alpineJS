@@ -25,4 +25,6 @@ Route::group(['prefix' => 'aula'], function () {
         ->name('aula03');
     Route::view('/04', 'aula.04')
         ->name('aula04');
+    Route::view('/05', 'aula.05')
+        ->name('aula05');
 });
