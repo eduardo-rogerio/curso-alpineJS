@@ -19,4 +19,8 @@ Route::view('/exercicios', 'exercicios')
 Route::group(['prefix' => 'aula'], function () {
     Route::view('/01', 'aula.01')
         ->name('aula01');
+    Route::view('/02', 'aula.02')
+        ->name('aula02');
+    Route::view('/03', 'aula.03')
+        ->name('aula03');
 });
