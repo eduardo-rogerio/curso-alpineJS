@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <style>
+        .red {
+            color: red;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div x-data="{
+        error:false,
+    }">
+    <span x-bind:class="{'red':error}" class="bold">teste</span>
+    <button type="button" x-on:click="error=!error">Alterar</button>
+</div>
+</body>
+</html>
