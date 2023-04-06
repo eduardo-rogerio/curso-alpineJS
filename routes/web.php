@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome')
-    ->name('home');
-Route::view('/test', 'test')
-    ->name('test');
+Route::view('/exercicios', 'exercicios')
+    ->name('exercicios');
+
+Route::group(['prefix' => 'aula'], function () {
+    Route::view('/01', 'aula.01')
+        ->name('aula01');
+});
