@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+<section x-data="{todo:['tarefa 1','tarefa 2','tarefa 3']}">
+    <ul>
+        <template x-for="todo in todo">
+            <li x-text="todo">
+            </li>
+        </template>
+    </ul>
+</section>
+</body>
+</html>
