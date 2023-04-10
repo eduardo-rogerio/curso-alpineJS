@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+<section x-data="{
+show_modal:false,
+}"
+>
+    <button type="submit" x-on:click="alert('teste')">Pesquisar</button>
+    <input type="search" placeholder="Pesquisa.." @keyup.enter="alert($el.value)">
+    <div
+        @keyup.escape.window.debounce="show_modal=false"
+        @modal.window="show_modal= !show_modal" x-show="show_modal">
+        <h1>modal</h1>
+
+    </div>
+    <button type="button" @click="$dispatch('modal')">Modal</button>
+
+    <form action="" @submit.prevent="alert('enviou formulário')">
+        <textarea name="text" id="text" cols="30" rows="10"></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+</body>
+</html>
