@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body class="bg-gray-300">
+<section x-data="{
+open:true,
+}"
+>
+    <button type="button" x-on:click="open = !open">Abre/Fecha</button>
+    <p x-show="open">Lorem ipsum dolor sit amet</p>
+</section>
+</body>
+</html>
